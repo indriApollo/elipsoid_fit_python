@@ -14,7 +14,7 @@ if __name__=='__main__':
     D = np.array([[r/a,0.,0.],[0.,r/b,0.],[0.,0.,r/c]])
     TR = evecs.dot(D).dot(evecs.T)
     
-    print('center: {:f}'.format(center))
+    print(center)
     print('transformation:')
     print(TR)
     
