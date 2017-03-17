@@ -4,11 +4,16 @@ matplotlib.use('Qt5Agg') # pip3 install PyQt5
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from ellipsoid_fit import ellipsoid_fit, ellipsoid_plot, data_regularize
+import argparse
 
 
 if __name__=='__main__':
 
-    data = np.loadtxt("mag_out.txt")
+    parser = argparse.ArgumentParser(description='Plot the ellipsoid')
+    parser.add_argument('filename')
+    args = parser.parse_args()
+
+    data = np.loadtxt(args.filename)
     data2 = data_regularize(data, divs=8)
 
     center, radii, evecs, v = ellipsoid_fit(data2)

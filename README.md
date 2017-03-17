@@ -11,7 +11,7 @@ Example input file is mag_out.txt and consists of rows with 3 numbers representi
 
 Use plot_ellipsoid.py to see input data, fitted ellipsoid and data transferred onto sphere surface.
 
-Use get_calibration_ellipsoid.py to generate mag_out.txt where first row has coordinates of fitted ellipsoid center, and other
+Use get_calibration_ellipsoid.py to generate mag_cal_ellipsoid.txt where first row has coordinates of fitted ellipsoid center, and other
 three rows are ellipsoid axes.
 
 Requirements are:

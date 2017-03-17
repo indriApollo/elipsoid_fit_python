@@ -1,10 +1,15 @@
 import numpy as np
 from ellipsoid_fit import ellipsoid_fit as ellipsoid_fit, data_regularize
+import argparse
 
 
 if __name__=='__main__':
 
-    data = np.loadtxt("mag_out.txt")
+    parser = argparse.ArgumentParser(description='Get center of each axis and transformation')
+    parser.add_argument('filename')
+    args = parser.parse_args()
+
+    data = np.loadtxt(args.filename)
     data2 = data_regularize(data)
 
     center, radii, evecs, v = ellipsoid_fit(data2)
@@ -18,5 +23,5 @@ if __name__=='__main__':
     print('transformation:')
     print(TR)
     
-    np.savetxt('magical_ellipsoid.txt', np.vstack((center.T, TR)))
+    np.savetxt('mag_cal_ellipsoid.txt', np.vstack((center.T, TR)))
 
