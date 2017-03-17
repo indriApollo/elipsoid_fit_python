@@ -14,10 +14,9 @@ if __name__=='__main__':
     D = np.array([[r/a,0.,0.],[0.,r/b,0.],[0.,0.,r/c]])
     TR = evecs.dot(D).dot(evecs.T)
     
-    print
-    print 'center: ',center
-    print 'transformation:'
-    print TR
+    print('center: {:f}'.format(center))
+    print('transformation:')
+    print(TR)
     
-    np.savetxt('magcal_ellipsoid.txt', np.vstack((center.T, TR)))
+    np.savetxt('magical_ellipsoid.txt', np.vstack((center.T, TR)))
 

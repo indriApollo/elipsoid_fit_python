@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib
+matplotlib.use('Qt5Agg') # pip3 install PyQt5
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from ellipsoid_fit import ellipsoid_fit, ellipsoid_plot, data_regularize
